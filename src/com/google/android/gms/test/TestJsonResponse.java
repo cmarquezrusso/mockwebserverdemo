@@ -39,10 +39,10 @@ public class TestJsonResponse  extends TestCase{
 	public void testWithMock() throws IOException, JSONException, InterruptedException
 	{
 		MockWebServer server = new MockWebServer();
-		MockResponse correoArgentinoResponse = new MockResponse();
-		correoArgentinoResponse.addHeader("Content-Type", "application/json; charset=ISO-8859-1");
-		correoArgentinoResponse.setBody("{\"error\":\"Expected a ',' or '}' at 15 [character 16 line 1]\",\"object_or_array\":\"object\",\"error_info\":\"This error came from the org.json reference parser.\",\"validate\":false}");
-		server.enqueue(correoArgentinoResponse);
+		MockResponse responseMock = new MockResponse();
+		responseMock.addHeader("Content-Type", "application/json; charset=ISO-8859-1");
+		responseMock.setBody("{\"error\":\"Expected a ',' or '}' at 15 [character 16 line 1]\",\"object_or_array\":\"object\",\"error_info\":\"This error came from the org.json reference parser.\",\"validate\":false}");
+		server.enqueue(responseMock);
         server.play();
 
         sendRequest(server.getUrl("/").toString());
