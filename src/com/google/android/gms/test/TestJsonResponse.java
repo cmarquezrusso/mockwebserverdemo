@@ -26,7 +26,7 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /**
- * @author Cristian Marquez <cristian04@gmail.com>
+ * @author Cristian Marquez
  *
  */
 public class TestJsonResponse  extends TestCase{
